@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{27400146-A8B5-2970-8957-AC3FD6BFF35C}") = "Mobile Reaction Game", "Assembly-CSharp.csproj", "{5CDD191C-D628-829F-EC5E-0021356AB970}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CDD191C-D628-829F-EC5E-0021356AB970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CDD191C-D628-829F-EC5E-0021356AB970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CDD191C-D628-829F-EC5E-0021356AB970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CDD191C-D628-829F-EC5E-0021356AB970}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
