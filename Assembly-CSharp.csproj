@@ -47,6 +47,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BlockScript.cs" />
      <Compile Include="Assets\Scripts\Controller.cs" />
+     <Compile Include="Assets\Scripts\RestartButton.cs" />
+     <Compile Include="Assets\Scripts\ScoreUi.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity 3d/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

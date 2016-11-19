@@ -5,7 +5,7 @@ public class Spawner : MonoBehaviour
 {
     #region FIELDS and PROPERTIES
 
-    private static float time = 1.5f;
+    private static float time = 1.3f;
 
     public static float TimeToSpawn
     {
@@ -25,12 +25,14 @@ public class Spawner : MonoBehaviour
         //In the next time, recursion will work here.
         if (Controller.GameActive)
         {
-            StartCoroutine("SpawnNewBlock");
+            StartCoroutine(SpawnNewBlock());
         }
     }
 
     IEnumerator SpawnNewBlock()
     {
+        if (Controller.GameActive)
+        {
         //W8ing some time
         yield return new WaitForSeconds(time);
         //load the obj
@@ -41,6 +43,8 @@ public class Spawner : MonoBehaviour
         Instantiate(block);
         //Recursion
         StartCoroutine("SpawnNewBlock");
+        }
+
     }
 
     float GeneratePositionX()
