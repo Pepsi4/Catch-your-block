@@ -45,11 +45,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BlockScript.cs" />
-     <Compile Include="Assets\Scripts\Controller.cs" />
-     <Compile Include="Assets\Scripts\RestartButton.cs" />
-     <Compile Include="Assets\Scripts\ScoreUi.cs" />
-     <Compile Include="Assets\Scripts\Spawner.cs" />
+     <Compile Include="Assets\Scripts\Game\BlockScript.cs" />
+     <Compile Include="Assets\Scripts\Game\Controller.cs" />
+     <Compile Include="Assets\Scripts\Game\RestartButton.cs" />
+     <Compile Include="Assets\Scripts\Game\ScorePic.cs" />
+     <Compile Include="Assets\Scripts\Game\ScoreUi.cs" />
+     <Compile Include="Assets\Scripts\Game\Spawner.cs" />
+     <Compile Include="Assets\Scripts\GameMenu\ButtonActions.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity 3d/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
