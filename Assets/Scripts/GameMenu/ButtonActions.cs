@@ -8,7 +8,7 @@ public class ButtonActions : MonoBehaviour
         //Start button
         GameObject.Find("Canvas/Start").GetComponent<Button>().onClick.AddListener(() => { LoadTheGame(); });
         //Settings
-        GameObject.Find("Canvas/Settings").GetComponent<Button>().onClick.AddListener(() => { LoadSetting(); });
+        //GameObject.Find("Canvas/Settings").GetComponent<Button>().onClick.AddListener(() => { LoadSetting(); });
         //Exit
         GameObject.Find("Canvas/Exit").GetComponent<Button>().onClick.AddListener(() => { Exit(); });
     }

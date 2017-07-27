@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 90402593dfe428648a2e19df0a551a8f
+timeCreated: 1501151523
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: TOYZARUX
+  fontNames:
+  - TOYZARUX
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

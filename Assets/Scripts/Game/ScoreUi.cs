@@ -6,38 +6,40 @@ public class ScoreUi : MonoBehaviour
 {
     private const float TextShowDelay = 0.1f;
 
-
-
-    //private ScorePic scr;
-    //private void EnableTheUiScoreText()
-    //{
-    //    GameObject.Find("Canvas/EndUiScore").GetComponent<>()
-    //}
-
-
-     void ShowTheScore()
+    void ShowTheScore()
     {
         string textScore = "Your score: " + Controller.Score;
-        StartCoroutine(ShowTheLitters(textScore));
+        string bestScore = "Best: " + Controller.BestScore;
+        StartCoroutine(ShowTheLitters(GameObject.Find("Canvas/EndUi/EndUiScore"), GameObject.Find("Canvas/EndUi/BestScore"), textScore, bestScore));
     }
 
     public void ActionsInTheEnd()
     {
         RestartButton.EnableTheButton();
-        //ScorePic.StartTheAnimation();
         ShowTheScore();
     }
 
-    IEnumerator ShowTheLitters(string textScore)
+    IEnumerator ShowTheLitters(GameObject obj, string textScore)
     {
         for (int x = 0; x < textScore.Length; x++)
         {
-            GameObject.Find("Canvas/EndUi/EndUiScore").GetComponent<Text>().text += textScore[x];
+            obj.GetComponent<Text>().text += textScore[x];
             yield return new WaitForSeconds(TextShowDelay);
         }
     }
 
-    
+    IEnumerator ShowTheLitters(GameObject objFirst, GameObject objSecond, string textScoreFirst, string textScoreSecond)
+    {
+        for (int x = 0; x < textScoreFirst.Length; x++)
+        {
+            objFirst.GetComponent<Text>().text += textScoreFirst[x];
+            yield return new WaitForSeconds(TextShowDelay);
+        }
 
-
+        for (int x = 0; x < textScoreSecond.Length; x++)
+        {
+            objSecond.GetComponent<Text>().text += textScoreSecond[x];
+            yield return new WaitForSeconds(TextShowDelay);
+        }
+    }
 }

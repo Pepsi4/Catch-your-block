@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Controller : MonoBehaviour {
+public class Controller : MonoBehaviour
+{
     #region FIELDS and PROPERTIES
+
+    public static int BestScore { get; set; }
 
     private static int lifes = 3;
 
@@ -29,12 +32,8 @@ public class Controller : MonoBehaviour {
     }
     #endregion
 
-
-
-
     public static void UpdateTheScoreUi()
     {
         GameObject.Find("Canvas/ScoreText").GetComponent<Text>().text = score.ToString();
     }
-    
 }

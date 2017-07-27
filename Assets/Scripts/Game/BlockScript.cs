@@ -12,9 +12,8 @@ public class BlockScript : MonoBehaviour
 
     private int minLifes = 1; //inclusive
     private int maxLifex = 4; //exclusive
-
+    
     #endregion
-
 
     void Start()
     {
@@ -23,8 +22,6 @@ public class BlockScript : MonoBehaviour
         lifes = Random.Range(minLifes, maxLifex);
         //start color
         ChangeTheColor();
-
-
     }
 
     void ChangeTheColor()
@@ -55,32 +52,15 @@ public class BlockScript : MonoBehaviour
             blockTransform.position = new Vector3(blockTransform.position.x, blockTransform.position.y,
             blockTransform.position.z - 0.1f);
         }
-
-
-
-        //if (gameObject.transform.position.z < -15)
-        //{
-        //    DestroyTheLife();
-        //}
     }
-
-    //void OnBecameInvisible()
-    //{
-    //    Debug.Log("test");
-    //    if (lifes != 0)
-    //    {
-    //        DestroyTheLife();
-    //    }
-    //}
-
-
 
     void OnMouseDown()
     {
         if ((Input.GetMouseButton(0) && Controller.GameActive) || (Input.GetTouch(0).phase == TouchPhase.Began))
         {
             //Less and less time to spawning new block
-            Spawner.TimeToSpawn *= 0.96f;
+            if (Spawner.TimeToSpawn > Spawner.MinSpawnTime)
+                Spawner.TimeToSpawn -= 0.05f;
 
             lifes--;
             ChangeTheColor();
@@ -96,6 +76,9 @@ public class BlockScript : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Destroys a life.
+    /// </summary>
     public void DestroyTheLife()
     {
         if (Controller.GameActive)
@@ -106,37 +89,21 @@ public class BlockScript : MonoBehaviour
             {
                 GameObject.Find("Canvas/EndUi").GetComponent<Animator>().Play("EndUi");
                 RestartButton.EnableTheButton();
+                SetBest();
 
                 Controller.GameActive = false;
             }
         }
-        
-
-        //if (GameObject.Find("Canvas/HealthImage (1)"))
-        //{
-
-        //    StartCoroutine(UpdateTheHealthUi(Controller.Lifes));
-        //    Controller.Lifes--;
-        //    return;
-        //}
-        //if (GameObject.Find("Canvas/HealthImage (2)"))
-        //{
-
-        //    StartCoroutine(UpdateTheHealthUi(Controller.Lifes));
-        //    Controller.Lifes--;
-        //    return;
-        //}
-        //if (GameObject.Find("Canvas/HealthImage (3)"))
-        //{
-
-        //    StartCoroutine(UpdateTheHealthUi(Controller.Lifes));
-        //    Controller.Lifes--;
-        //    return;
-        //}
-
     }
 
-
+    private void SetBest()
+    {
+        if (Controller.Score > Controller.BestScore)
+        {
+            Controller.BestScore = Controller.Score;
+        }
+    }
+    
     void OnTriggerEnter(Collider col)
     {
         if (col.name == "TriggerZone")
@@ -159,15 +126,8 @@ public class BlockScript : MonoBehaviour
         else
         {
             Destroy(GameObject.Find("Canvas/HealthImage (" + lifeNumber + ")"));
-            
-            
+
             Destroy(this.gameObject);
         }
     }
-
-
-
-
-
-
 }
