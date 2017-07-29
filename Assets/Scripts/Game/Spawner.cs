@@ -9,6 +9,10 @@ public class Spawner : MonoBehaviour
 
     public const float SpawnTime = 1.3f;
     public const float MinSpawnTime = 0.5f;
+
+    private Camera _camera;
+    private float _minSpawnX = -1.0f;
+    private float _maxSpawnX = 1.0f;
     #endregion
 
     void Start()
@@ -41,7 +45,7 @@ public class Spawner : MonoBehaviour
 
     float GeneratePositionX()
     {
-        float x = Random.Range(-1.85f, 2.15f);
+        float x = Random.Range(_minSpawnX, _maxSpawnX);
         return x;
     }
 }
