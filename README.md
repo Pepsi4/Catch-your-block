@@ -1,6 +1,8 @@
 # Reaction-Game
 Simple game on reaction. Adapted for mobile platforms.
 
+You also can try it here: https://pepsi4.github.io/Games/Reaction/index.html . It's compiled with WebGL.
+
 ![alt text](https://cloud.githubusercontent.com/assets/10260469/25074649/190c7014-2309-11e7-813d-cf08bba30b62.jpg)
 
 **Repo info:**
